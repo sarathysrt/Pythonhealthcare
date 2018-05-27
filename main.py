@@ -16,7 +16,7 @@ kk=data.to_json(orient='records')
 
 @app.route('/')
 def hello_world():
-  return jsonify(books)
+  return kk
 
 if __name__ == '__main__':
   app.run()
