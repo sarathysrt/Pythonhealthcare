@@ -9,9 +9,7 @@ elevations = json.dumps(books)
 data=pd.read_json(elevations)
 data.columns=['Time','Record']
 data.Record=[x*-1 for x in data.Record]
-(baseline, ecg_out) = bwr.bwr(data.Record)
-data.Record=ecg_out
-kk=data.to_json(orient='records')
+
 
 @app.route('/')
 def hello_world():
