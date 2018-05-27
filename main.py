@@ -15,7 +15,7 @@ data.Record=ecg_out
 kk=data.to_json(orient='records')
 
 @app.route('/Bline/<name>')
-def hello_world():
+def hello_world(name):
   return kk
 
 if __name__ == '__main__':
