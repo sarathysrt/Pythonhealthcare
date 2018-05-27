@@ -14,7 +14,7 @@ data.Record=[x*-1 for x in data.Record]
 data.Record=ecg_out
 kk=data.to_json(orient='records')
 
-@app.route('/')
+@app.route('/Bline/<name>')
 def hello_world():
   return kk
 
