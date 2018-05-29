@@ -30,7 +30,7 @@ def postJsonD():
     #ss=ask_for_dir(data)
     
    
-    return 'ss'#jsonify(content)
+    return jsonify(content)
 
 @app.route('/postjson', methods = ['POST'])
 def postJsonHandler():
