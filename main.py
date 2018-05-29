@@ -22,7 +22,7 @@ def postJsonD():
     data.Record=[x*-1 for x in pd.to_numeric(data.Record)]
     (baseline, ecg_out) = bwr.bwr(data.Record)
     data.Record=ecg_out
-    #ss=data.to_json(orient='records')
+    ss=data.to_json(orient='records')
     plt.figure(figsize=(10,2))
     #plt.axis('off')
     plt.plot(data.Time,data.Record)
@@ -30,7 +30,7 @@ def postJsonD():
     #ss=ask_for_dir(data)
     
    
-    return jsonify(content)
+    return ss#jsonify(content)
 
 @app.route('/postjson', methods = ['POST'])
 def postJsonHandler():
