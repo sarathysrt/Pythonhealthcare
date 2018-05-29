@@ -1,2 +1,4 @@
 Flask==0.12.1
 pandas==0.21
+matplotlib
+azure.cognitiveservices.vision.customvision
