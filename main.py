@@ -23,9 +23,9 @@ def postJsonD():
     (baseline, ecg_out) = bwr.bwr(data.Record)
     data.Record=ecg_out
     ss=data.to_json(orient='records')
-    #plt.figure(figsize=(10,2))
+    plt.figure(figsize=(10,2))
     #plt.axis('off')
-    #plt.plot(data.Time,data.Record)
+    plt.plot(data.Time,data.Record)
     #plt.savefig('D:/home/Img/123.png')
     #ss=ask_for_dir(data)
     
