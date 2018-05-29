@@ -26,7 +26,7 @@ def postJsonD():
     plt.figure(figsize=(10,2))
     #plt.axis('off')
     plt.plot(data.Time,data.Record)
-    plt.savefig('123.png')
+    plt.savefig('D:/home/Img/123.png')
     #ss=ask_for_dir(data)
     
     prediction_key = "45183f01c6a5411aa812727e157ff00f"
