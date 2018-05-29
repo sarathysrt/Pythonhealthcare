@@ -30,8 +30,8 @@ plt.figure(figsize=(10,2))
 #plt.axis('off')
 plt.plot(data.Time,data.Record)
 buf = io.BytesIO()
-plt.savefig(buf, format='png')
-#plt.savefig('123.png')
+#plt.savefig(buf, format='png')
+plt.savefig('123.png')
 
 prediction_key = "45183f01c6a5411aa812727e157ff00f"
 project_id = "40428416-afc2-4201-819e-27ce80646b0f"
