@@ -26,7 +26,7 @@ def postJsonD():
     plt.figure(figsize=(10,2))
     #plt.axis('off')
     plt.plot(data.Time,data.Record)
-    #plt.savefig('123.png')
+    plt.savefig('123.png')
     #ss=ask_for_dir(data)
     
    
