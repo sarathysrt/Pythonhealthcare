@@ -9,6 +9,7 @@ import json
 import pandas as pd
 import bwr
 import time
+import numpy as np
 from azure.cognitiveservices.vision.customvision.prediction import prediction_endpoint
 from azure.cognitiveservices.vision.customvision.prediction.prediction_endpoint import models
 
