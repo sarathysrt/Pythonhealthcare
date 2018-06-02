@@ -17,7 +17,9 @@ def conv(books):
     #print(type(elevations))
     data=pd.read_json(elevations)
     data.columns=['Time','Record']
-    data.Record=[x*-1 for x in data.Record]
+    yy=min(data.Record)
+    yy = yy*-1 if np.sign(yy) == -1 else yy
+    data.Record=[x+yy for x in pd.to_numeric(data.Record)]
     (baseline, ecg_out) = bwr.bwr(data.Record)
     data.Record=ecg_out
     #kk=data.to_json(orient='records')
