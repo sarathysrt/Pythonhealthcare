@@ -42,7 +42,7 @@ def postJsonHandler():
     data = pd.io.json.json_normalize(content)
     data.columns=['Time','Record']
     yy=min(data.Record)
-    #yy = yy*-1 if np.sign(yy) == -1 else yy
+    yy = yy*-1 if np.sign(yy) == -1 else yy
     data.Record=[x*-1 for x in pd.to_numeric(data.Record)]
     (baseline, ecg_out) = bwr.bwr(data.Record)
     data.Record=ecg_out
