@@ -20,7 +20,7 @@ def postJsonD():
     content = request.get_json()
     data = pd.io.json.json_normalize(content)
     data.columns=['Time','Record']
-    imagesave.conv(content)
+    
     data.Record=[x*-1 for x in pd.to_numeric(data.Record)]
     (baseline, ecg_out) = bwr.bwr(data.Record)
     data.Record=ecg_out
@@ -32,7 +32,7 @@ def postJsonD():
     #ss=ask_for_dir(data)
        
    
-    return ss#jsonify(content)
+    return imagesave.conv(content)#ss#jsonify(content)
 
 @app.route('/postjson', methods = ['POST'])
 def postJsonHandler():
