@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Jun  2 13:01:28 2018
-
-@author: Milestone7
-"""
 import matplotlib.pyplot as plt
 import json
 import pandas as pd
