@@ -6,6 +6,7 @@ import io
 import time
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 from azure.cognitiveservices.vision.customvision.prediction import prediction_endpoint
 from azure.cognitiveservices.vision.customvision.prediction.prediction_endpoint import models
 import imagesave
