@@ -14,16 +14,7 @@ from azure.cognitiveservices.vision.customvision.prediction import prediction_en
 from azure.cognitiveservices.vision.customvision.prediction.prediction_endpoint import models
 
 def conv(books):
-    elevations = json.dumps(books)
-    #print(type(elevations))
-    data=pd.read_json(elevations)
-    data.columns=['Time','Record']
-    yy=min(data.Record)
-    yy = yy*-1 if np.sign(yy) == -1 else yy
-    data.Record=[x+yy for x in pd.to_numeric(data.Record)]
-    (baseline, ecg_out) = bwr.bwr(data.Record)
-    data.Record=ecg_out
-    #kk=data.to_json(orient='records')
+    data=baseline(books)
     plt.figure(figsize=(10,2))
     #plt.axis('off')
     plt.plot(data.Time,data.Record)
@@ -45,3 +36,15 @@ def conv(books):
     #print(k1)
     #print (time.strftime("%H:%M:%S"))
     return k1
+def baseline(books):
+    elevations = json.dumps(books)
+    #print(type(elevations))
+    data=pd.read_json(elevations)
+    data.columns=['Time','Record']
+    yy=min(data.Record)
+    yy = yy*-1 if np.sign(yy) == -1 else yy
+    data.Record=[x+yy for x in pd.to_numeric(data.Record)]
+    (baseline, ecg_out) = bwr.bwr(data.Record)
+    data.Record=ecg_out
+    #kk=data.to_json(orient='records')
+    return data
