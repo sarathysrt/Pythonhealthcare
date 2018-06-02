@@ -15,12 +15,12 @@ books = [{   "FIELD1": "2.000",   "FIELD2": "-2.835" }, {   "FIELD1": "2.001",  
 
 @app.route('/getD', methods = ['POST'])
 def postJsonD():
-    imagesave.conv()
+    
     print (request.is_json)
     content = request.get_json()
     data = pd.io.json.json_normalize(content)
     data.columns=['Time','Record']
-    
+    imagesave.conv(content)
     data.Record=[x*-1 for x in pd.to_numeric(data.Record)]
     (baseline, ecg_out) = bwr.bwr(data.Record)
     data.Record=ecg_out
