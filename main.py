@@ -28,33 +28,9 @@ def postJsonD():
     plt.plot(data.Time,data.Record)
     #plt.savefig('123.png')
     #ss=ask_for_dir(data)
-        prediction_key = "45183f01c6a5411aa812727e157ff00f"
-    project_id = "40428416-afc2-4201-819e-27ce80646b0f"
-    iteration_id = "21d2b2bc-bc4b-4e7f-903e-4d961df831b7"
-
-    print (time.strftime("%H:%M:%S"))
-
-    predictor = prediction_endpoint.PredictionEndpoint(prediction_key)
-    with open("123.png", mode="rb") as test_data:
-        results = predictor.predict_image(project_id, test_data, iteration_id)
-        #results = predictor.predict_image(project_id, buf.read(), iteration_id)
-
-    print("results")
-    appended_data = []
-
-    for prediction in results.predictions:
-        appended_data.append(prediction.tag_name+ ": {0:.2f}%".format(prediction.probability))
-        print ("\t" + prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100))
-        
-    k1=pd.DataFrame(appended_data).to_json(orient='records')
-    print (time.strftime("%H:%M:%S"))
-    
-
-
-    print (type(content))
-    
+       
    
-    return k1#ss#jsonify(content)
+    return ss#jsonify(content)
 
 @app.route('/postjson', methods = ['POST'])
 def postJsonHandler():
