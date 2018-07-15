@@ -6,7 +6,7 @@ Created on Tue Jul 10 21:07:25 2018
 """
 
 
-import bwr1 as bwr
+import bwr as bwr
 import pandas as pd
 from scipy.signal import butter, lfilter
 import numpy as np
