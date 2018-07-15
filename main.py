@@ -18,9 +18,9 @@ def postJsonHandler():
     data.columns=['Record']#['Time','Record']
     # Peak points
     data=data.Record
-    aDict=Dm.Get_PQRS(data)
+    #aDict=Dm.Get_PQRS(data)
     #print (type(content))
-    return json.dumps(aDict)#jsonify(content)
+    return jsonify(content)#json.dumps(aDict)#jsonify(content)
 
 if __name__ == '__main__':
   app.run()
